@@ -37,8 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app'
+    
+    'app',
+    #'sendemail.apps.SendemailConfig',
 ]
+
+DEFAULT_FROM_EMAIL = 'info@qreate.com'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,6 +59,7 @@ ROOT_URLCONF = 'contact.urls'
 
 TEMPLATES = [
     {
+        #'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
